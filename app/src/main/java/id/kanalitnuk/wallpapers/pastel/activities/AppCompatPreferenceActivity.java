@@ -1,13 +1,10 @@
-package id.kanalitnuk.aquaman.activities;
+package id.kanalitnuk.wallpapers.pastel.activities;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import android.support.annotation.ColorInt;
 import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.StyleRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
@@ -16,8 +13,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.afollestad.materialdialogs.color.ColorChooserDialog;
-import id.kanalitnuk.aquaman.R;
+import id.kanalitnuk.wallpapers.R;
 
 /**
  * A {@link PreferenceActivity} which implements and proxies the necessary calls

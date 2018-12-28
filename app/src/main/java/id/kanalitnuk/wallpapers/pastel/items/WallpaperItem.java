@@ -1,4 +1,4 @@
-package id.kanalitnuk.aquaman.items;
+package id.kanalitnuk.wallpapers.pastel.items;
 
 import android.content.Context;
 import android.os.Parcel;

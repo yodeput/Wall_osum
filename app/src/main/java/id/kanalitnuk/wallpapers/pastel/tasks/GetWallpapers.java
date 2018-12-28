@@ -1,16 +1,13 @@
-package id.kanalitnuk.aquaman.tasks;
+package id.kanalitnuk.wallpapers.pastel.tasks;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.widget.Toast;
 
-import id.kanalitnuk.aquaman.MainActivity;
-import id.kanalitnuk.aquaman.R;
-import id.kanalitnuk.aquaman.others.Utils;
+import id.kanalitnuk.wallpapers.R;
+import id.kanalitnuk.wallpapers.pastel.others.Utils;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -21,7 +18,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -57,7 +53,7 @@ public class GetWallpapers extends AsyncTask<Void, Void, Void> {
             HttpResponse response = httpclient.execute(httppost);
             jsonResult = inputStreamToString(response.getEntity().getContent())
                     .toString();
-            Log.i("response", "doInBackground: "+ jsonResult);
+            //Log.i("response", "doInBackground: "+ jsonResult);
 
         } catch (ClientProtocolException e) {
             Log.e("e", "error1");

@@ -1,10 +1,8 @@
-package id.kanalitnuk.aquaman.dialogs;
+package id.kanalitnuk.wallpapers.pastel.dialogs;
 
 import android.content.Context;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-
-import java.util.concurrent.Callable;
 
 public final class ISDialogs {
 

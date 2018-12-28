@@ -1,4 +1,4 @@
-package id.kanalitnuk.aquaman.adapter;
+package id.kanalitnuk.wallpapers.pastel.adapter;
 
 
 import android.annotation.SuppressLint;
@@ -18,19 +18,19 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import id.kanalitnuk.aquaman.R;
-import id.kanalitnuk.aquaman.activities.ApplyWallpaper;
-import id.kanalitnuk.aquaman.items.WallpaperItem;
-import id.kanalitnuk.aquaman.others.Utils;
-import id.kanalitnuk.aquaman.tasks.ColorGridTask;
+import id.kanalitnuk.wallpapers.R;
+import id.kanalitnuk.wallpapers.pastel.activities.ApplyWallpaper;
+import id.kanalitnuk.wallpapers.pastel.items.WallpaperItem;
+import id.kanalitnuk.wallpapers.pastel.others.KanalitnuK;
+import id.kanalitnuk.wallpapers.pastel.others.Utils;
+import id.kanalitnuk.wallpapers.pastel.tasks.ColorGridTask;
 
 import java.util.List;
 
 public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> {
 
     private List<WallpaperItem> images;
-    private Context mContext;
-
+    private Context context;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageView thumbnail;
         public TextView name,author;
@@ -40,20 +40,23 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
 
         public MyViewHolder(View view) {
             super(view);
+
             thumbnail = (ImageView) view.findViewById(R.id.wall_grid_art);
             author = (TextView) view.findViewById(R.id.wall_grid_desc);
             realBackground = (RelativeLayout) view.findViewById(R.id.wall_real_background);
             name = (TextView) view.findViewById(R.id.wall_grid_name);
             pb = (ProgressBar) view.findViewById(R.id.progressBar_wall_grid);
+
             mainView = view;
         }
     }
 
 
     public WallAdapter(Context context, List<WallpaperItem> images) {
-        mContext = context;
+        this.context = context;
         this.images = images;
         notifyDataSetChanged();
+
     }
 
     @Override
@@ -69,8 +72,8 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
         WallpaperItem image = images.get(position);
         holder.name.setText(images.get(position).getName());
         holder.author.setText(images.get(position).getAuthor());
-        if(Utils.darkTheme) holder.realBackground.setBackgroundColor(mContext.getResources().getColor(android.R.color.darker_gray));
-        Glide.with(mContext)
+        if(Utils.darkTheme) holder.realBackground.setBackgroundColor(context.getResources().getColor(android.R.color.darker_gray));
+        Glide.with(context)
                 .load(image.getThumb())
                 .asBitmap()
                 .listener(new RequestListener<String, Bitmap>() {
@@ -82,8 +85,8 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
                     @Override
                     public boolean onResourceReady(Bitmap resource, String model, Target<Bitmap> target, boolean isFromMemoryCache, boolean isFirstResource) {
                         holder.pb.setVisibility(View.GONE);
-                        holder.realBackground.setBackgroundColor(mContext.getResources().getColor(android.R.color.darker_gray));
-                        new ColorGridTask(mContext, resource, holder).execute();
+                        holder.realBackground.setBackgroundColor(context.getResources().getColor(android.R.color.darker_gray));
+                        new ColorGridTask(context, resource, holder).execute();
                         return false;
                     }
                 })
@@ -95,14 +98,17 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
             @Override
             public void onClick(View view) {
 
-                mContext.startActivity(
-                        new Intent(mContext, ApplyWallpaper.class)
+                context.startActivity(
+                        new Intent(context, ApplyWallpaper.class)
                                 .putExtra(ApplyWallpaper.EXTRA_WALLPAPER, images.get(holder.getAdapterPosition())),
                         ActivityOptionsCompat.makeScaleUpAnimation(view, (int) view.getX(), (int) view.getY(), view.getWidth(), view.getHeight()).toBundle()
-                );
 
+
+                );
+                KanalitnuK.getInstance().InterstitialAd(context);
             }
         });
+
 
     }
 

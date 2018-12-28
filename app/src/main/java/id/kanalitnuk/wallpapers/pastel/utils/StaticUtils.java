@@ -1,4 +1,4 @@
-package id.kanalitnuk.aquaman.utils;
+package id.kanalitnuk.wallpapers.pastel.utils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

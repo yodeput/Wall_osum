@@ -1,4 +1,4 @@
-package id.kanalitnuk.aquaman.activities;
+package id.kanalitnuk.wallpapers.pastel.activities;
 
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -9,8 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import id.kanalitnuk.aquaman.R;
-import id.kanalitnuk.aquaman.others.Utils;
+import com.google.android.gms.ads.MobileAds;
+
+import id.kanalitnuk.wallpapers.R;
+import id.kanalitnuk.wallpapers.pastel.others.Utils;
 
 public class AboutAppActivity extends AppCompatActivity {
     private static final String PREF_DARK_THEME = "dark_theme";
@@ -20,6 +22,7 @@ public class AboutAppActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         mPref = PreferenceManager.getDefaultSharedPreferences(this);
         isTheme = mPref.getBoolean(PREF_DARK_THEME, false);
+        MobileAds.initialize(this, getString(R.string.ADMOB_APP_ID));
         Utils.mTheme = isTheme;
         if (isTheme) {
             setTheme(R.style.AppTheme_Dark_NoActionBar);

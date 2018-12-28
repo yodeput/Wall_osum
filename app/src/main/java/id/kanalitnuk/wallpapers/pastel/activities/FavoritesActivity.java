@@ -1,34 +1,32 @@
-package id.kanalitnuk.aquaman.activities;
+package id.kanalitnuk.wallpapers.pastel.activities;
 
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.CursorLoader;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import id.kanalitnuk.aquaman.MainActivity;
-import id.kanalitnuk.aquaman.R;
-import id.kanalitnuk.aquaman.adapter.WallAdapter;
-import id.kanalitnuk.aquaman.database.DBController;
-import id.kanalitnuk.aquaman.items.WallpaperItem;
-import id.kanalitnuk.aquaman.others.Utils;
+import com.google.android.gms.ads.MobileAds;
+
+import id.kanalitnuk.wallpapers.pastel.MainActivity;
+import id.kanalitnuk.wallpapers.R;
+import id.kanalitnuk.wallpapers.pastel.adapter.WallAdapter;
+import id.kanalitnuk.wallpapers.pastel.database.DBController;
+import id.kanalitnuk.wallpapers.pastel.items.WallpaperItem;
+import id.kanalitnuk.wallpapers.pastel.others.Utils;
 
 import java.util.ArrayList;
 
@@ -51,6 +49,7 @@ public class FavoritesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         mPref = PreferenceManager.getDefaultSharedPreferences(this);
         isTheme = mPref.getBoolean(MainActivity.PREF_DARK_THEME, false);
+        MobileAds.initialize(this, getString(R.string.ADMOB_APP_ID));
         Utils.openToWalls = mPref.getBoolean("open_to_walls", false);
         Utils.mTheme = isTheme;
         if (isTheme) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="id.kanalitnuk.aquaman">
+    package="id.kanalitnuk.wallpapers">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -15,9 +15,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.Launcher">
+        android:theme="@style/AppTheme.Launcher"
+        android:name=".pastel.others.KanalitnuK">
 
-        <activity android:name=".MainActivity">
+        <activity android:name="id.kanalitnuk.wallpapers.pastel.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +31,7 @@
 
         </activity>
 
-        <activity android:name=".activities.ApplyWallpaper">
+        <activity android:name=".pastel.activities.ApplyWallpaper">
             <intent-filter>
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
@@ -38,33 +39,36 @@
         </activity>
 
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name=".pastel.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="id.kanalitnuk.wallpapers.pastel.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.viztushar.osumwalls.MainActivity" />
+                android:value="id.kanalitnuk.wallpapers.pastel.MainActivity" />
         </activity>
 
         <activity
-            android:name=".activities.FavoritesActivity"
+            android:name=".pastel.activities.FavoritesActivity"
             android:label="@string/title_activity_favorites_fragment"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="id.kanalitnuk.wallpapers.pastel.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.viztushar.osumwalls.MainActivity" />
+                android:value="id.kanalitnuk.wallpapers.pastel.MainActivity" />
         </activity>
 
         <activity
-            android:name=".activities.AboutAppActivity"
-            android:parentActivityName=".MainActivity">
+            android:name=".pastel.activities.AboutAppActivity"
+            android:parentActivityName="id.kanalitnuk.wallpapers.pastel.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="id.kanalitnuk.wallpapers.pastel.MainActivity" />
         </activity>
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3227311126104028~9123103403"/>
     </application>
 
 </manifest>

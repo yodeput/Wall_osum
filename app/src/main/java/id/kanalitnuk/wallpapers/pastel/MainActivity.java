@@ -1,11 +1,9 @@
-package id.kanalitnuk.aquaman;
+package id.kanalitnuk.wallpapers.pastel;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,29 +13,29 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import id.kanalitnuk.aquaman.activities.FavoritesActivity;
-import id.kanalitnuk.aquaman.activities.SettingsActivity;
-import id.kanalitnuk.aquaman.database.DBController;
-import id.kanalitnuk.aquaman.fragments.HomeFragment;
-import id.kanalitnuk.aquaman.others.Preferences;
-import id.kanalitnuk.aquaman.others.Utils;
+import id.kanalitnuk.wallpapers.BuildConfig;
+import id.kanalitnuk.wallpapers.R;
+import id.kanalitnuk.wallpapers.pastel.activities.FavoritesActivity;
+import id.kanalitnuk.wallpapers.pastel.activities.SettingsActivity;
+import id.kanalitnuk.wallpapers.pastel.database.DBController;
+import id.kanalitnuk.wallpapers.pastel.fragments.HomeFragment;
+import id.kanalitnuk.wallpapers.pastel.others.Preferences;
+import id.kanalitnuk.wallpapers.pastel.others.Utils;
 
-import static id.kanalitnuk.aquaman.others.Preferences.KEY_NAVBAR;
-import static id.kanalitnuk.aquaman.others.Utils.PREF_COLORED_NAV;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
+import static id.kanalitnuk.wallpapers.pastel.others.Utils.PREF_COLORED_NAV;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private Context context;
     boolean doubleBackToExitPressedOnce = false;
+    private AdView mAdView;
     DBController controller = new DBController(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mPref = PreferenceManager.getDefaultSharedPreferences(this);
+        MobileAds.initialize(this, getString(R.string.ADMOB_APP_ID));
         isTheme = mPref.getBoolean(PREF_DARK_THEME, false);
         Utils.openToWalls = mPref.getBoolean("open_to_walls", false);
         Utils.mTheme = isTheme;
@@ -83,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
             setHomeFrag();
         }
 
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         mSetNav();
     }
 
@@ -224,8 +227,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case android.R.id.home:
-                mDrawerLayout.openDrawer(GravityCompat.START);
+            case R.id.action_rate:
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.rate_link_app))));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.rate_link_web))));
+                }
+                break;
             case R.id.action_sendemail:
                 sendEmail();
                 break;

@@ -1,4 +1,4 @@
-package id.kanalitnuk.aquaman.activities;
+package id.kanalitnuk.wallpapers.pastel.activities;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -24,7 +24,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.util.Log;
@@ -43,14 +42,16 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.google.android.gms.ads.MobileAds;
 import com.mikepenz.materialize.MaterializeBuilder;
-import id.kanalitnuk.aquaman.R;
-import id.kanalitnuk.aquaman.database.DBController;
-import id.kanalitnuk.aquaman.dialogs.ISDialogs;
-import id.kanalitnuk.aquaman.items.WallpaperItem;
-import id.kanalitnuk.aquaman.others.Preferences;
-import id.kanalitnuk.aquaman.others.Utils;
-import id.kanalitnuk.aquaman.utils.StaticUtils;
+import id.kanalitnuk.wallpapers.R;
+import id.kanalitnuk.wallpapers.pastel.database.DBController;
+import id.kanalitnuk.wallpapers.pastel.dialogs.ISDialogs;
+import id.kanalitnuk.wallpapers.pastel.items.WallpaperItem;
+import id.kanalitnuk.wallpapers.pastel.others.KanalitnuK;
+import id.kanalitnuk.wallpapers.pastel.others.Preferences;
+import id.kanalitnuk.wallpapers.pastel.others.Utils;
+import id.kanalitnuk.wallpapers.pastel.utils.StaticUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -92,6 +93,7 @@ public class ApplyWallpaper extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         mPref = PreferenceManager.getDefaultSharedPreferences(this);
+        MobileAds.initialize(this, getString(R.string.ADMOB_APP_ID));
         isTheme = mPref.getBoolean(PREF_DARK_THEME, false);
         Utils.openToWalls = mPref.getBoolean("open_to_walls", false);
         Utils.mTheme = isTheme;
@@ -124,6 +126,7 @@ public class ApplyWallpaper extends AppCompatActivity {
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                KanalitnuK.getInstance().InterstitialAd(ApplyWallpaper.this);
                 finish();
             }
 
@@ -142,6 +145,7 @@ public class ApplyWallpaper extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                KanalitnuK.getInstance().InterstitialAd(ApplyWallpaper.this);
                 showDialogs("save");
             }
         });
@@ -150,6 +154,7 @@ public class ApplyWallpaper extends AppCompatActivity {
         btnApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                KanalitnuK.getInstance().InterstitialAd(ApplyWallpaper.this);
                 showDialogs("apply");
             }
         });
@@ -158,6 +163,7 @@ public class ApplyWallpaper extends AppCompatActivity {
         btnfav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                KanalitnuK.getInstance().InterstitialAd(ApplyWallpaper.this);
                 checkFav();
                 wallpaperItem.setFavorite(ApplyWallpaper.this, !wallpaperItem.isFavorite());
             }

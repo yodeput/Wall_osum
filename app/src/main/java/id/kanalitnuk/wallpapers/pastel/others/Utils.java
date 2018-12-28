@@ -1,4 +1,4 @@
-package id.kanalitnuk.aquaman.others;
+package id.kanalitnuk.wallpapers.pastel.others;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
