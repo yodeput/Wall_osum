@@ -5,17 +5,22 @@ android {
     buildToolsVersion "28.0.2"
 
     defaultConfig {
-        applicationId "id.kanalitnuk.wallpaper.pastel"
+        applicationId "id.kanalitnuk.spiderman"
         minSdkVersion 14
         targetSdkVersion 27
-        versionCode 11
+        versionCode 100
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
+
+        def date = new Date();
+        def formattedDate = date.format('ddMMyy_HHmm')
+
+        setProperty("archivesBaseName", applicationId + "-v" + versionName + "_" +formattedDate)
     }
     signingConfigs {
         release {
             try {
-                storeFile file("KanalitnuK.jks")
+                storeFile file("D:/Android/Personal_project/KanalitnuK.jks")
                 storePassword "1907resta"
                 keyAlias "KanalitnuK"
                 keyPassword "1907resta"
@@ -27,9 +32,12 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            debuggable false
+            zipAlignEnabled true
+            minifyEnabled true
+            shrinkResources false
             signingConfig signingConfigs.release
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles 'proguard-android-optimize.txt', 'proguard-rules.pro'
         }
     }
 

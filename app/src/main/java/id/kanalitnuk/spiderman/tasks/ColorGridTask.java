@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.tasks;
+package id.kanalitnuk.spiderman.tasks;
 
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
@@ -7,8 +7,8 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.support.v7.graphics.Palette;
 
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.adapter.WallAdapter;
+import id.kanalitnuk.spiderman.R;
+import id.kanalitnuk.spiderman.adapter.WallAdapter;
 
 
 /**

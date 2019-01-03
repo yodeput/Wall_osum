@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel;
+package id.kanalitnuk.spiderman;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,20 +22,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import id.kanalitnuk.wallpapers.BuildConfig;
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.activities.FavoritesActivity;
-import id.kanalitnuk.wallpapers.pastel.activities.SettingsActivity;
-import id.kanalitnuk.wallpapers.pastel.database.DBController;
-import id.kanalitnuk.wallpapers.pastel.fragments.HomeFragment;
-import id.kanalitnuk.wallpapers.pastel.others.Preferences;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
+import id.kanalitnuk.spiderman.activities.FavoritesActivity;
+import id.kanalitnuk.spiderman.activities.SettingsActivity;
+import id.kanalitnuk.spiderman.database.DBController;
+import id.kanalitnuk.spiderman.fragments.HomeFragment;
+import id.kanalitnuk.spiderman.others.Preferences;
+import id.kanalitnuk.spiderman.others.Utils;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-import static id.kanalitnuk.wallpapers.pastel.others.Utils.PREF_COLORED_NAV;
+import static id.kanalitnuk.spiderman.others.Utils.PREF_COLORED_NAV;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -86,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
         mSetNav();
     }
 

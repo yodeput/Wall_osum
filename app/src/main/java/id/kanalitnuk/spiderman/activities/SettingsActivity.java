@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.activities;
+package id.kanalitnuk.spiderman.activities;
 
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -16,9 +16,9 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
-import id.kanalitnuk.wallpapers.pastel.MainActivity;
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
+import id.kanalitnuk.spiderman.MainActivity;
+import id.kanalitnuk.spiderman.R;
+import id.kanalitnuk.spiderman.others.Utils;
 
 
 public class SettingsActivity extends AppCompatPreferenceActivity {

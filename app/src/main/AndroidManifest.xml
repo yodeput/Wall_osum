@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="id.kanalitnuk.wallpapers">
+    package="id.kanalitnuk.spiderman">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -16,9 +16,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher"
-        android:name=".pastel.others.KanalitnuK">
+        android:name="id.kanalitnuk.spiderman.others.KanalitnuK">
 
-        <activity android:name="id.kanalitnuk.wallpapers.pastel.MainActivity">
+        <activity android:name="id.kanalitnuk.spiderman.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +31,7 @@
 
         </activity>
 
-        <activity android:name=".pastel.activities.ApplyWallpaper">
+        <activity android:name="id.kanalitnuk.spiderman.activities.ApplyWallpaper">
             <intent-filter>
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
@@ -39,36 +39,36 @@
         </activity>
 
         <activity
-            android:name=".pastel.activities.SettingsActivity"
+            android:name="id.kanalitnuk.spiderman.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="id.kanalitnuk.wallpapers.pastel.MainActivity"
+            android:parentActivityName="id.kanalitnuk.spiderman.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="id.kanalitnuk.wallpapers.pastel.MainActivity" />
+                android:value="id.kanalitnuk.spiderman.MainActivity" />
         </activity>
 
         <activity
-            android:name=".pastel.activities.FavoritesActivity"
+            android:name="id.kanalitnuk.spiderman.activities.FavoritesActivity"
             android:label="@string/title_activity_favorites_fragment"
-            android:parentActivityName="id.kanalitnuk.wallpapers.pastel.MainActivity"
+            android:parentActivityName="id.kanalitnuk.spiderman.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="id.kanalitnuk.wallpapers.pastel.MainActivity" />
+                android:value="id.kanalitnuk.spiderman.MainActivity" />
         </activity>
 
         <activity
-            android:name=".pastel.activities.AboutAppActivity"
-            android:parentActivityName="id.kanalitnuk.wallpapers.pastel.MainActivity">
+            android:name="id.kanalitnuk.spiderman.activities.AboutAppActivity"
+            android:parentActivityName="id.kanalitnuk.spiderman.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="id.kanalitnuk.wallpapers.pastel.MainActivity" />
+                android:value="id.kanalitnuk.spiderman.MainActivity" />
         </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3227311126104028~9123103403"/>
+            android:value="@string/ADMOB_APP_ID"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.activities;
+package id.kanalitnuk.spiderman.activities;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -42,16 +42,18 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.mikepenz.materialize.MaterializeBuilder;
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.database.DBController;
-import id.kanalitnuk.wallpapers.pastel.dialogs.ISDialogs;
-import id.kanalitnuk.wallpapers.pastel.items.WallpaperItem;
-import id.kanalitnuk.wallpapers.pastel.others.KanalitnuK;
-import id.kanalitnuk.wallpapers.pastel.others.Preferences;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
-import id.kanalitnuk.wallpapers.pastel.utils.StaticUtils;
+import id.kanalitnuk.spiderman.R;
+import id.kanalitnuk.spiderman.database.DBController;
+import id.kanalitnuk.spiderman.dialogs.ISDialogs;
+import id.kanalitnuk.spiderman.items.WallpaperItem;
+import id.kanalitnuk.spiderman.others.KanalitnuK;
+import id.kanalitnuk.spiderman.others.Preferences;
+import id.kanalitnuk.spiderman.others.Utils;
+import id.kanalitnuk.spiderman.utils.StaticUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -87,7 +89,7 @@ public class ApplyWallpaper extends AppCompatActivity {
     WallpaperItem wallpaperItem;
     private static final String PREF_DARK_THEME = "dark_theme";
     DBController controller = new DBController(this);
-
+    private AdView mAdView;
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
@@ -118,6 +120,11 @@ public class ApplyWallpaper extends AppCompatActivity {
         favicon = (ImageView) findViewById(R.id.favicon);
 
         wallpaperItem = getIntent().getParcelableExtra(EXTRA_WALLPAPER);
+
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         Log.d("tag", "onCreate() returned: " + wallpaperItem.getUrl());
         mTextWall.setText(wallpaperItem.getName());

@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.others;
+package id.kanalitnuk.spiderman.others;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

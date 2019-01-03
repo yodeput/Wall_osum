@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.items;
+package id.kanalitnuk.spiderman.items;
 
 import android.content.Context;
 import android.os.Parcel;

@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.dialogs;
+package id.kanalitnuk.spiderman.dialogs;
 
 import android.content.Context;
 

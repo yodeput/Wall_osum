@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.fragments;
+package id.kanalitnuk.spiderman.fragments;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
@@ -30,13 +30,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import id.kanalitnuk.wallpapers.pastel.MainActivity;
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.adapter.WallAdapter;
-import id.kanalitnuk.wallpapers.pastel.items.WallpaperItem;
-import id.kanalitnuk.wallpapers.pastel.others.Preferences;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
-import id.kanalitnuk.wallpapers.pastel.tasks.GetWallpapers;
+import id.kanalitnuk.spiderman.MainActivity;
+import id.kanalitnuk.spiderman.R;
+import id.kanalitnuk.spiderman.adapter.WallAdapter;
+import id.kanalitnuk.spiderman.items.WallpaperItem;
+import id.kanalitnuk.spiderman.others.Preferences;
+import id.kanalitnuk.spiderman.others.Utils;
+import id.kanalitnuk.spiderman.tasks.GetWallpapers;
 
 import org.json.JSONArray;
 import org.json.JSONException;

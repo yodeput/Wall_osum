@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.others;
+package id.kanalitnuk.spiderman.others;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,7 +8,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
-import id.kanalitnuk.wallpapers.R;
+import id.kanalitnuk.spiderman.R;
 
 public class KanalitnuK extends Application {
 
@@ -44,7 +44,7 @@ public class KanalitnuK extends Application {
     public void check_click(){
         int counter = prefManager.getClickCounter();
         Log.e("Click Counter ---->",Integer.toString(counter));
-        if (counter>5){
+        if (counter>6){
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
                 prefManager.resetClickCounter();

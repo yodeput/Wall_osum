@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.database;
+package id.kanalitnuk.spiderman.database;
 
 import android.content.Context;
 import android.database.Cursor;

@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.utils;
+package id.kanalitnuk.spiderman.utils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

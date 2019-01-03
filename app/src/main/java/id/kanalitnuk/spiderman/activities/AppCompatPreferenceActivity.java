@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.activities;
+package id.kanalitnuk.spiderman.activities;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import id.kanalitnuk.wallpapers.R;
+import id.kanalitnuk.spiderman.R;
 
 /**
  * A {@link PreferenceActivity} which implements and proxies the necessary calls
