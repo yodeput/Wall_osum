@@ -50,7 +50,7 @@ public class KanalitnuK extends Application {
         }
         int counter = prefManager.getClickCounter();
         Log.e("Click Counter ---->",Integer.toString(counter));
-        if (counter>6){
+        if (counter>3){
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
                 prefManager.resetClickCounter();

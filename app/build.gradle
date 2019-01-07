@@ -6,10 +6,10 @@ android {
 
     defaultConfig {
         applicationId "id.kanalitnuk.aquaman"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 27
-        versionCode 350
-        versionName "3.5"
+        versionCode 360
+        versionName "3.6"
         vectorDrawables.useSupportLibrary = true
 
         def date = new Date();

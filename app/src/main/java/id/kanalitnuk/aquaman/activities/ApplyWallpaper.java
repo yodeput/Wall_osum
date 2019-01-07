@@ -47,6 +47,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.mikepenz.materialize.MaterializeBuilder;
 import id.kanalitnuk.aquaman.R;
+import id.kanalitnuk.aquaman.ca.MainkanActivity;
 import id.kanalitnuk.aquaman.database.DBController;
 import id.kanalitnuk.aquaman.dialogs.ISDialogs;
 import id.kanalitnuk.aquaman.items.WallpaperItem;
@@ -90,7 +91,7 @@ public class ApplyWallpaper extends AppCompatActivity {
     private static final String PREF_DARK_THEME = "dark_theme";
     DBController controller = new DBController(this);
     private AdView mAdView,mAdView2;
-
+    static int i = 0;
     @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -168,13 +169,29 @@ public class ApplyWallpaper extends AppCompatActivity {
             }
         });
 
+
         btnfav = (LinearLayout) findViewById(R.id.fav);
         btnfav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                KanalitnuK.getInstance().InterstitialAd(ApplyWallpaper.this);
-                checkFav();
-                wallpaperItem.setFavorite(ApplyWallpaper.this, !wallpaperItem.isFavorite());
+                i++;
+
+                    KanalitnuK.getInstance().InterstitialAd(ApplyWallpaper.this);
+                    checkFav();
+                    wallpaperItem.setFavorite(ApplyWallpaper.this, !wallpaperItem.isFavorite());
+
+
+
+
+            }
+        });
+        btnfav.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent myIntent = new Intent(ApplyWallpaper.this, MainkanActivity.class);
+                startActivity(myIntent);
+
+                return false;
             }
         });
 

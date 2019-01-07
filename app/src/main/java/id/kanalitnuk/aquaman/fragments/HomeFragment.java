@@ -30,6 +30,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import id.kanalitnuk.aquaman.MainActivity;
 import id.kanalitnuk.aquaman.R;
 import id.kanalitnuk.aquaman.adapter.WallAdapter;
@@ -55,6 +59,7 @@ public class HomeFragment extends Fragment implements GetWallpapers.Callbacks {
     private ProgressBar mainProgress;
     SharedPreferences mPref;
     private SwipeRefreshLayout swipeContainer;
+    private AdView mAdView;
 
     public HomeFragment() {
 
@@ -78,6 +83,7 @@ public class HomeFragment extends Fragment implements GetWallpapers.Callbacks {
         mainProgress = (ProgressBar) mainView.findViewById(R.id.mainProgress);
         mainProgress.setVisibility(View.VISIBLE);
         init();
+        MobileAds.initialize(getActivity(), getString(R.string.ADMOB_APP_ID));
         mPref = PreferenceManager.getDefaultSharedPreferences(context);
         swipeContainer = (SwipeRefreshLayout) mainView.findViewById(R.id.swipeContainer);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -93,6 +99,9 @@ public class HomeFragment extends Fragment implements GetWallpapers.Callbacks {
             }
         });
 
+        mAdView = mainView.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         Preferences prefs = new Preferences(context);
         Utils.gridNo = prefs.getInteger("grid", 2);
         items = new ArrayList<>();

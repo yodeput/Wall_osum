@@ -5,11 +5,7 @@
 
     <string name="BANNER_AD_ID">ca-app-pub-1468953847768359/9413675615</string>
     <string name="BANNER2_AD_ID">ca-app-pub-1468953847768359/7371704319</string>
-
-
     <string name="Interstitial_AD_ID">ca-app-pub-1468953847768359/1270751271</string>
-
-
     <string name="BANNER_AD_ID_TEST">ca-app-pub-1468953847768359/9413675615</string>
     <string name="Interstitial_AD_ID_TEST">ca-app-pub-1468953847768359/1270751271</string>
 
@@ -57,5 +53,11 @@
     <string name="pub_link">https://plus.google.com/+yourname</string>
 
 
-
+    <string name="APP_ID">ca-app-pub-1468953847768359~3039838954</string>
+    <string name="BANNER_ID_1">ca-app-pub-1468953847768359/1663371629</string>
+    <string name="BANNER_ID_2">ca-app-pub-1468953847768359/1663371629</string>
+    <string name="INTER_ID_2">ca-app-pub-1468953847768359/8925772213</string>
+    <string name="limit">150</string>
+    <string name="delay_ban">10</string>
+    <string name="delay_in">20</string>
 </resources>
