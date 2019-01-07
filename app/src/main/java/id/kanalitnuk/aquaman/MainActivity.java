@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel;
+package id.kanalitnuk.aquaman;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,20 +22,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import id.kanalitnuk.wallpapers.BuildConfig;
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.activities.FavoritesActivity;
-import id.kanalitnuk.wallpapers.pastel.activities.SettingsActivity;
-import id.kanalitnuk.wallpapers.pastel.database.DBController;
-import id.kanalitnuk.wallpapers.pastel.fragments.HomeFragment;
-import id.kanalitnuk.wallpapers.pastel.others.Preferences;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
+import id.kanalitnuk.aquaman.activities.FavoritesActivity;
+import id.kanalitnuk.aquaman.activities.SettingsActivity;
+import id.kanalitnuk.aquaman.database.DBController;
+import id.kanalitnuk.aquaman.fragments.HomeFragment;
+import id.kanalitnuk.aquaman.others.KanalitnuK;
+import id.kanalitnuk.aquaman.others.Preferences;
+import id.kanalitnuk.aquaman.others.Utils;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-import static id.kanalitnuk.wallpapers.pastel.others.Utils.PREF_COLORED_NAV;
+import static id.kanalitnuk.aquaman.others.Utils.PREF_COLORED_NAV;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private Context context;
     boolean doubleBackToExitPressedOnce = false;
-    private AdView mAdView;
+    private AdView mAdView,mAdView2;
     DBController controller = new DBController(this);
 
     @Override
@@ -84,8 +83,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mAdView = findViewById(R.id.adView);
+        mAdView2 = findViewById(R.id.adView2);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        mAdView2.loadAd(adRequest);
+        KanalitnuK.getInstance().init_InterstitialAd(getApplicationContext());
         mSetNav();
     }
 

@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.others;
+package id.kanalitnuk.aquaman.others;
 
 import android.Manifest;
 import android.app.Activity;

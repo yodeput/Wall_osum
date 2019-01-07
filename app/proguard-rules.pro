@@ -1,6 +1,6 @@
 # Add project specific ProGuard rules here.
 # By default, the flags in this file are appended to flags specified
-# in C:\Users\tushar\AppData\Local\Android\sdk/tools/proguard/proguard-android.txt
+# in D:\Android\SDK/tools/proguard/proguard-android.txt
 # You can edit the include path and order by changing the proguardFiles
 # directive in build.gradle.
 #
@@ -15,17 +15,46 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
--keep class com.google.android.gms.** {
-    *;
-}
 
--dontwarn com.batch.android.mediation.**
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
 
--dontwarn com.batch.android.BatchPushService
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+-keep class android.support.v7.view.menu** {*;}
+-keep class android.support.v7.graphics.** {*;}
 
 -keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep class com.bumptech.glide.GeneratedAppGlideModuleImpl
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
   **[] $VALUES;
   public *;
 }
--keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+
+-keep public class android.app.ActivityTransitionCoordinator
+-keep class jahirfiquitiva.libs.frames.** { *; }
+-keep class jahirfiquitiva.libs.kext.** { *; }
+
+-keep class com.google.**
+-keep class autovalue.shaded.com.google.**
+-keep class com.android.vending.billing.**
+-keep public class com.android.vending.licensing.ILicensingService
+
+-dontwarn org.apache.**
+-dontwarn com.google.**
+-dontwarn autovalue.shaded.com.google.**
+-dontwarn com.android.vending.billing.**
+
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+
+-dontwarn
+-ignorewarnings

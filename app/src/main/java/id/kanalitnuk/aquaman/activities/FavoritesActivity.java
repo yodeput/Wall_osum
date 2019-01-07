@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.activities;
+package id.kanalitnuk.aquaman.activities;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -21,12 +21,12 @@ import android.widget.ImageView;
 
 import com.google.android.gms.ads.MobileAds;
 
-import id.kanalitnuk.wallpapers.pastel.MainActivity;
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.adapter.WallAdapter;
-import id.kanalitnuk.wallpapers.pastel.database.DBController;
-import id.kanalitnuk.wallpapers.pastel.items.WallpaperItem;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
+import id.kanalitnuk.aquaman.MainActivity;
+import id.kanalitnuk.aquaman.R;
+import id.kanalitnuk.aquaman.adapter.WallAdapter;
+import id.kanalitnuk.aquaman.database.DBController;
+import id.kanalitnuk.aquaman.items.WallpaperItem;
+import id.kanalitnuk.aquaman.others.Utils;
 
 import java.util.ArrayList;
 

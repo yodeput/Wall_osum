@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.adapter;
+package id.kanalitnuk.aquaman.adapter;
 
 
 import android.annotation.SuppressLint;
@@ -18,12 +18,16 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.activities.ApplyWallpaper;
-import id.kanalitnuk.wallpapers.pastel.items.WallpaperItem;
-import id.kanalitnuk.wallpapers.pastel.others.KanalitnuK;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
-import id.kanalitnuk.wallpapers.pastel.tasks.ColorGridTask;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
+import id.kanalitnuk.aquaman.R;
+import id.kanalitnuk.aquaman.activities.ApplyWallpaper;
+import id.kanalitnuk.aquaman.items.WallpaperItem;
+import id.kanalitnuk.aquaman.others.KanalitnuK;
+import id.kanalitnuk.aquaman.others.Preferences;
+import id.kanalitnuk.aquaman.others.Utils;
+import id.kanalitnuk.aquaman.tasks.ColorGridTask;
 
 import java.util.List;
 
@@ -31,12 +35,16 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
 
     private List<WallpaperItem> images;
     private Context context;
+    private Preferences pref;
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageView thumbnail;
         public TextView name,author;
         public RelativeLayout realBackground;
         public ProgressBar pb;
         public View mainView;
+        public InterstitialAd mInterstitialAd;
+
 
         public MyViewHolder(View view) {
             super(view);
@@ -46,6 +54,10 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
             realBackground = (RelativeLayout) view.findViewById(R.id.wall_real_background);
             name = (TextView) view.findViewById(R.id.wall_grid_name);
             pb = (ProgressBar) view.findViewById(R.id.progressBar_wall_grid);
+
+            mInterstitialAd = new InterstitialAd(context);
+            mInterstitialAd.setAdUnitId(context.getString(R.string.Interstitial_AD_ID));
+            mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
             mainView = view;
         }
@@ -63,7 +75,7 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.wall_thum, parent, false);
-
+        KanalitnuK.getInstance().init_InterstitialAd(context);
         return new MyViewHolder(itemView);
     }
 
@@ -98,6 +110,8 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
             @Override
             public void onClick(View view) {
 
+              KanalitnuK.getInstance().add_click();
+                KanalitnuK.getInstance().check_click();
                 context.startActivity(
                         new Intent(context, ApplyWallpaper.class)
                                 .putExtra(ApplyWallpaper.EXTRA_WALLPAPER, images.get(holder.getAdapterPosition())),

@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.activities;
+package id.kanalitnuk.aquaman.activities;
 
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.MobileAds;
 
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
+import id.kanalitnuk.aquaman.R;
+import id.kanalitnuk.aquaman.others.Utils;
 
 public class AboutAppActivity extends AppCompatActivity {
     private static final String PREF_DARK_THEME = "dark_theme";

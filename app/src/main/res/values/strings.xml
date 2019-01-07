@@ -1,20 +1,23 @@
 <resources>
-    <string name="app_name">2019 Pastel Wallpapers</string>
+    <string name="app_name">Aquaman 2019 Best Wallpapers</string>
 
-    <string name="ADMOB_APP_ID">ca-app-pub-3227311126104028~9123103403</string>
+    <string name="ADMOB_APP_ID">ca-app-pub-1468953847768359~3039838954</string>
 
-    <string name="BANNER_AD_ID">ca-app-pub-3227311126104028/8085353907</string>
-    <string name="Interstitial_AD_ID">ca-app-pub-3227311126104028/3357315996</string>
+    <string name="BANNER_AD_ID">ca-app-pub-1468953847768359/9413675615</string>
+    <string name="BANNER2_AD_ID">ca-app-pub-1468953847768359/7371704319</string>
 
 
-    <string name="BANNER_AD_ID_TEST">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="Interstitial_AD_ID_TEST">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="Interstitial_AD_ID">ca-app-pub-1468953847768359/1270751271</string>
+
+
+    <string name="BANNER_AD_ID_TEST">ca-app-pub-1468953847768359/9413675615</string>
+    <string name="Interstitial_AD_ID_TEST">ca-app-pub-1468953847768359/1270751271</string>
 
     <!--Wallpaper url-->
-    <string name="wall_url">https://pastebin.com/raw/XfuA9zue</string>
+    <string name="wall_url">https://pastebin.com/raw/RGCaEsy9</string>
 
      <!--Wallpaper folder path-->
-    <string name="walls_save_location">"/Pictures/PASTEL/"</string>
+    <string name="walls_save_location">"/Pictures/AquaMan/"</string>
 
 
     <!-- setting strings -->
@@ -31,9 +34,9 @@
 
     <!-- setting strings -->
     <string name="rate_title">Rate App</string>
-    <string name="rate_desc">Rate 2019 Pastel Wallpapers on the play store. It would really mean a lot too us</string>
-    <string name="rate_link_app">market://details?id=id.kanalitnuk.wallpaper.pastel</string>
-    <string name="rate_link_web">https://play.google.com/store/apps/details?id=id.kanalitnuk.wallpaper.pastel</string>
+    <string name="rate_desc">Rate 2019 Aquaman Wallpapers on the play store. It would really mean a lot too us</string>
+    <string name="rate_link_app">market://details?id=id.kanalitnuk.aquaman</string>
+    <string name="rate_link_web">https://play.google.com/store/apps/details?id=id.kanalitnuk.aquaman</string>
 
     <!-- donate -->
     <string name="donate_title">Support Development</string>

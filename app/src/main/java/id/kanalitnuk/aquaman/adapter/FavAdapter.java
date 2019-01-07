@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.adapter;
+package id.kanalitnuk.aquaman.adapter;
 
 /**
  * Created by Tushar on 04-07-2016.

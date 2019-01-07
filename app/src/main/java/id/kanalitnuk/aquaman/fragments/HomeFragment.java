@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.fragments;
+package id.kanalitnuk.aquaman.fragments;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
@@ -30,13 +30,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import id.kanalitnuk.wallpapers.pastel.MainActivity;
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.adapter.WallAdapter;
-import id.kanalitnuk.wallpapers.pastel.items.WallpaperItem;
-import id.kanalitnuk.wallpapers.pastel.others.Preferences;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
-import id.kanalitnuk.wallpapers.pastel.tasks.GetWallpapers;
+import id.kanalitnuk.aquaman.MainActivity;
+import id.kanalitnuk.aquaman.R;
+import id.kanalitnuk.aquaman.adapter.WallAdapter;
+import id.kanalitnuk.aquaman.items.WallpaperItem;
+import id.kanalitnuk.aquaman.others.Preferences;
+import id.kanalitnuk.aquaman.others.Utils;
+import id.kanalitnuk.aquaman.tasks.GetWallpapers;
 
 import org.json.JSONArray;
 import org.json.JSONException;

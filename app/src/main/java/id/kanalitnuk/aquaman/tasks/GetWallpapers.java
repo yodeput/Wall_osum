@@ -1,4 +1,4 @@
-package id.kanalitnuk.wallpapers.pastel.tasks;
+package id.kanalitnuk.aquaman.tasks;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -6,8 +6,8 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import id.kanalitnuk.wallpapers.R;
-import id.kanalitnuk.wallpapers.pastel.others.Utils;
+import id.kanalitnuk.aquaman.R;
+import id.kanalitnuk.aquaman.others.Utils;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
